@@ -11,19 +11,6 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 
     class EU4
     {
-        int IntPow(int x, uint pow)
-        {
-            int ret = 1;
-            while (pow != 0)
-            {
-                if ((pow & 1) == 1)
-                    ret *= x;
-                x *= x;
-                pow >>= 1;
-            }
-            return ret;
-        }
-
         public bool isPal(int num)
         {
             List<int> digits = new List<int>();
@@ -36,7 +23,6 @@ Find the largest palindrome made from the product of two 3-digit numbers.
             //foreach (int digit in digits)
                 //Console.Write(digit);
            //Console.WriteLine();
-
             int begIdx = 0;
             int endIdx = digits.Count-1;
             bool isPalindrome = true;
@@ -50,7 +36,7 @@ Find the largest palindrome made from the product of two 3-digit numbers.
             return isPalindrome;
         }
 
-        public List<(int,int)> getMaxPals(uint numOfDigs)
+        List<(int,int)> getMaxPals(uint numOfDigs)
         {
             List<(int, int)> results = new List<(int, int)>();
             int num1 = 10.Pow(numOfDigs) - 1;
